@@ -1,12 +1,17 @@
-import BrowserWindow, { app } from "electron";
+import  { BrowserWindow,app } from "electron";
 
-function createWindow(){
-    const win = new BrowserWindow({
+async function createWindow(){
+    try {
+        const win = await new BrowserWindow({
         width: 1000,
         height: 700,
-    });
+        });
 
-    win.loadurl("http://localhost:5173");
+        await win.loadURL("http://localhost:5173");
+    } catch (error) {
+        console.log(error.message);
+    }
+    
 }
 
 app.whenReady().then(()=>{
