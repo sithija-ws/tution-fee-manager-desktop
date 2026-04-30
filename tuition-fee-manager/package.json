@@ -5,7 +5,7 @@
   "type": "module",
   "main": "electron/main.js",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run react\" \"npm run electron\"",
+    "dev": "concurrently -k \"npm run server\" \"npm run react\" \"npm run electron\"",
     "react": "vite",
     "server": "node server/index.js",
     "electron": "wait-on http://localhost:5173 && electron .",

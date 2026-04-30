@@ -41,6 +41,10 @@ export const markPayment = async (req,res) => {
         const id = req.params.id;
 
         await db.prepare(`UPDATE student SET paid=1 WHERE id= ?`).run(id);
+
+        res.json({
+            message: "payment marked successfully!"
+        })
     } catch (error) {
         console.log(error.message);
     }
