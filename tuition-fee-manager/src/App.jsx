@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import studentRegister from './pages/studentRegister.jsx'
+import StudentTable from './components/studentTable.jsx'
+import Students from './pages/students.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <Students/>
     </>
   )
 }
